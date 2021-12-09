@@ -1,0 +1,193 @@
+/* BASE */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap");
+
+/* VARIABLES CSS */
+:root {
+  --card-height: 2.25rem;
+
+  /* COLORS */
+  --background-color: hsl(217, 54%, 11%);
+  --card-color: hsl(216, 50%, 16%);
+  --header-txt: hsl(0, 0%, 100%);
+  --text-color: hsl(215, 51%, 70%);
+  --coin-color: hsl(178, 100%, 50%);
+  --line-color: hsl(215, 32%, 27%);
+
+  /* FONT AND TYPO */
+  --body-font: "Outfit", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* MARGINS */
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Card */
+
+.card-space {
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+  width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1.7rem auto;
+}
+
+.card-container {
+  margin: var(--mb-3);
+}
+
+.img-container {
+  position: relative;
+  margin-bottom: var(--mb-2);
+  cursor: pointer;
+}
+
+.card-img {
+  /* width: 100%; */
+  display: block;
+  border-radius: 0.7rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.card-overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.7rem;
+  background-color: rgba(0, 255, 247, 0.3);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.img-container:hover .card-overlay {
+  opacity: 1;
+}
+
+.view-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-title,
+.name-link {
+  color: var(--header-txt);
+}
+
+.card-title:hover,
+.name-link:hover {
+  color: var(--coin-color);
+  cursor: pointer;
+}
+
+.card-data {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--mb-1) auto;
+}
+
+.card-price {
+  color: var(--coin-color);
+}
+
+.card-creator {
+  display: flex;
+  align-items: center;
+}
+
+.card-profile {
+  border: var(--header-txt) solid 1px;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.card-author-description {
+  margin: auto var(--mb-3);
+}
+
+.card-description {
+  margin: var(--mb-2) 0;
+}
+
+.line-break {
+  width: 100%;
+  border-top: solid 2px var(--line-color);
+  margin: var(--mb-2) 0;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
